@@ -1,0 +1,38 @@
+# ---- Data (too large for git, share via OneDrive/Teams instead) ----
+data/
+*.csv
+*.parquet
+*.feather
+*.h5
+*.hdf5
+*.nc
+*.grib
+*.grib2
+*.idx
+*.zip
+*.pkl
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# ---- Virtual environments ----
+.venv/
+venv/
+env/
+weatherData/
+
+# ---- Jupyter ----
+.ipynb_checkpoints/
+
+# ---- Secrets (e.g. CDS API key) ----
+.env
+.cdsapirc
+
+# ---- OS / editors ----
+.DS_Store
+.vscode/
+.idea/
