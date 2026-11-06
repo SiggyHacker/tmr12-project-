@@ -7,19 +7,21 @@ One shared definition of what "valid" data looks like.
 If you change a rule, change it here so both notebooks stay in sync.
 """
 
-# 1. Schema: columns we rely on, and their expected type
+# 1. Schema: columns we rely on, and their expected kind of type.
+# Kinds, not exact pandas types: the exact names change between pandas versions
+# (e.g. datetime64[ns] vs datetime64[us], object vs str) without the data changing.
 REQUIRED_COLUMNS = {
-    "date_time_utc": "datetime64[ns]",
-    "mmsi": "int64",
-    "imo": "int64",
-    "ship_name": "object",
-    "lon": "float64",
-    "lat": "float64",
-    "speed": "float64",       # SOG, knots
-    "cog": "float64",         # degrees
-    "true_heading": "float64",
-    "draught": "float64",     # metres
-    "ais_class": "object",
+    "date_time_utc": "datetime",
+    "mmsi": "int",
+    "imo": "int",
+    "ship_name": "string",
+    "lon": "float",
+    "lat": "float",
+    "speed": "float",         # SOG, knots
+    "cog": "float",           # degrees
+    "true_heading": "float",  # float, not int: it has missing values
+    "draught": "float",       # metres
+    "ais_class": "string",
 }
 
 # 2. Identity: exactly these two ships. Use MMSI as the ID (both ships were renamed in 2025).
